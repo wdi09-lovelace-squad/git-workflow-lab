@@ -3,24 +3,22 @@
 $(document).ready(function(){
 
 
-var userTemplate = Handlebars.compile($('#user-template').html());
+  var userTemplate = Handlebars.compile($('#user-template').html());
 
   var showUsers = function(error, data) {
     if (error) {
       console.error(error);
+      return;
     }
-    return;
-
     var userHTML = userTemplate(data);
-
-      $('#users').html(userHTML);
+    $('#users').html(userHTML);
   };
 
 
   // button click
   $('#user-button').click(function(e){
     e.preventDefault();
-    listUsers();
+    listUsers(showUsers);
   });
 
 });
