@@ -14,7 +14,6 @@ $(document).ready(function(){
     $('#users').html(userHTML);
   };
 
-
   // button click
   $('#user-button').click(function(e){
     e.preventDefault();
